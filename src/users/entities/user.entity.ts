@@ -12,7 +12,7 @@ export class User {
   name: string;
 
   @Prop()
-  password: string;
+  password: Number;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

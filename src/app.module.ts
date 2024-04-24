@@ -3,7 +3,7 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { APP_FILTER, APP_PIPE } from '@nestjs/core';
-import { AllExceptionsFilter } from './exceptions/all-exceptions.filter';
+
 
 @Module({
   imports: [
@@ -11,10 +11,6 @@ import { AllExceptionsFilter } from './exceptions/all-exceptions.filter';
     UsersModule],
   controllers: [],
   providers: [
-    {
-      provide: APP_FILTER,
-      useClass: AllExceptionsFilter,
-    },
     {
       provide: APP_PIPE,
       useClass: ValidationPipe,
